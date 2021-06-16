@@ -55,7 +55,7 @@ main {
     display: block;
     position: absolute;
     left: 50%;
-    transform: translateY(-55%) translateX(-55%);
+    transform: translateY(-60%) translateX(-55%);
 }
 
 .faq-list {
