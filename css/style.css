@@ -20,8 +20,53 @@ html, body {
 html {
     font-size: 0.75em;
     font-family: 'Kumbh Sans', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, var(--upper-color), var(--lower-color));
+    background-repeat: no-repeat;
+}
+*, * * {
+    box-sizing: border-box;
 }
 
+main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    border-radius: 8px;
+}
+
+.illustration {
+    background-color: white;
+    background-image: url('../images/bg-pattern-mobile.svg');
+    background-repeat: no-repeat;
+    background-position: top;
+    border-radius: inherit;
+    transform: translateY(50%);
+}
+    .illustration__main {
+        transform: translateY(-55%);
+    }
+
 .faq-list {
-    list-style: none;
+    background-color: white;
+    border-radius: inherit;
+    padding: 2rem;
+
+    position: relative;
+    z-index: 1;
+}
+    .faq-list h1 {
+        text-align: center;
+    }
+    .faq-list ul {
+        list-style: none;
+        padding: 1rem;
+    }
+
+footer {
+    text-align: center;
 }
