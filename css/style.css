@@ -23,45 +23,43 @@ html {
     font-family: 'Kumbh Sans', sans-serif;
     background: linear-gradient(to bottom, var(--upper-color), var(--lower-color));
     background-repeat: no-repeat;
+    min-height: 100vh;
 }
 *, * * {
     box-sizing: border-box;
 }
+h1 {
+    font-size: 2.5rem;
+    color: var(--heading-color);
+}
 
 main {
-    min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding: 2rem;
 }
 
 .wrapper {
-    border-radius: 8px;
-    width: 90vw;
-    padding: 1rem 0;
-}
-
-.illustration {
+    border-radius: 16px;
+    width: 85vw;
+    padding: 1rem;
+    margin-top: 100px; /* Space for overflowing SVG image on mobile */
     background-color: white;
     background-image: url('../images/bg-pattern-mobile.svg');
     background-repeat: no-repeat;
     background-position: top;
-    border-radius: inherit;
-    transform: translateY(55%);
+    position: relative;
 }
-    .illustration__main {
-        margin-left: 50%;
-        transform: translateY(-55%) translateX(-55%);
-    }
+
+.illustration {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateY(-55%) translateX(-55%);
+}
 
 .faq-list {
-    background-color: white;
-    border-radius: inherit;
-    padding: 1rem 2rem;
-
-    position: relative;
-    top: 2rem;
-    z-index: 1;
+    margin-top: 120px; /* Space for bottom half of overflowing SVG */
 }
     .faq-list h1 {
         text-align: center;
@@ -70,20 +68,57 @@ main {
         list-style: none;
         padding: 1rem;
     }
-    .faq-list details > summary {
-        list-style: none;
+    .faq-list ul li {
+        width: 100%;
+        padding: 1.5rem 0;
+        border-bottom: 1px solid var(--divider-color);
     }
-    .faq-list details > summary::-webkit-details-marker {
+    .faq-list ul li details {
+        width: 100%;
+    }
+    .faq-list ul li details > summary {
+        list-style: none;
+        color: var(--summary-color);
+        cursor: pointer;
+    }
+    .faq-list ul li details > summary::-webkit-details-marker {
         display: none;
     }
-    .faq-list details {
-        width: 100%;
+    .faq-list ul li details > summary:hover {
+        color: var(--hover-color) !important;
+        cursor: pointer;
+    }
+    .faq-list ul li details > summary::after {
+        content: url('../images/icon-arrow-down.svg');
+        float: right;
+        transition: transform 0.4s ease;
+    }
+    .faq-list ul li details[open] > summary {
+        font-weight: bolder;
+        color: var(--heading-color);
+    }
+    .faq-list ul li details[open] > summary::after {
+        content: url('../images/icon-arrow-down.svg');
+        float: right;
+        animation: rotate 0.4s ease;
+        transform: rotate(180deg);
     }
     .faq-list details > p {
         max-width: inherit;
+        margin-bottom: 0;
+        color: var(--detail-color);
     }
 
 footer {
     text-align: center;
     margin-top: 2rem;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
 }
