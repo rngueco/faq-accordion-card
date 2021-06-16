@@ -20,7 +20,6 @@ html, body {
 html {
     font-size: 0.75em;
     font-family: 'Kumbh Sans', sans-serif;
-    min-height: 100vh;
     background: linear-gradient(to bottom, var(--upper-color), var(--lower-color));
     background-repeat: no-repeat;
 }
@@ -37,6 +36,8 @@ main {
 
 .wrapper {
     border-radius: 8px;
+    width: 90vw;
+    padding: 1rem 0;
 }
 
 .illustration {
@@ -45,18 +46,22 @@ main {
     background-repeat: no-repeat;
     background-position: top;
     border-radius: inherit;
-    transform: translateY(50%);
+    transform: translateY(55%);
 }
     .illustration__main {
-        transform: translateY(-55%);
+        margin-left: 50%;
+        transform: translateY(-55%) translateX(-55%);
     }
 
 .faq-list {
     background-color: white;
     border-radius: inherit;
-    padding: 2rem;
+    padding: 1rem 2rem;
+    height: 100%;
 
     position: relative;
+    top: 2rem;
+    margin-bottom: 2rem;
     z-index: 1;
 }
     .faq-list h1 {
@@ -65,6 +70,18 @@ main {
     .faq-list ul {
         list-style: none;
         padding: 1rem;
+    }
+    .faq-list details > summary {
+        list-style: none;
+    }
+    .faq-list details > summary::-webkit-details-marker {
+        display: none;
+    }
+    .faq-list details {
+        width: 100%;
+    }
+    .faq-list details > p {
+        max-width: inherit;
     }
 
 footer {
