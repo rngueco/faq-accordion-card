@@ -16,6 +16,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 html {
     font-size: 0.75em;
@@ -57,11 +58,9 @@ main {
     background-color: white;
     border-radius: inherit;
     padding: 1rem 2rem;
-    height: 100%;
 
     position: relative;
     top: 2rem;
-    margin-bottom: 2rem;
     z-index: 1;
 }
     .faq-list h1 {
@@ -86,4 +85,5 @@ main {
 
 footer {
     text-align: center;
+    margin-top: 2rem;
 }
