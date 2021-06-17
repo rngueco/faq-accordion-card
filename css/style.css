@@ -122,3 +122,41 @@ footer {
         transform: rotate(180deg);
     }
 }
+
+/* For desktop and tablets */
+@media (min-width: 768px) {
+    main {
+        min-height: 100vh;
+        align-items: center;
+    }
+
+    .wrapper {
+        width: 70vw;
+        margin-top: 0;
+        overflow-x: hidden;
+
+        background-image: url('../images/bg-pattern-desktop.svg');
+        background-repeat: no-repeat;
+        background-size: 50%;
+        background-position: -100px 50%;
+
+        display: flex;
+        align-items: center;
+    }
+
+    picture {
+        flex: 0 1 50%;
+        max-width: 50%;
+    }
+        .illustration {
+            position: static;
+            transform: translateX(-100px);
+            width: 100%;
+        }
+    
+    .faq-list {
+        flex: 1 0 50%;
+        margin-top: 0;
+        padding: 3rem;
+    }
+}
