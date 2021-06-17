@@ -144,9 +144,10 @@ footer {
         align-items: center;
     }
 
-    picture {
+    .illustration-box {
         flex: 0 1 50%;
         max-width: 50%;
+        position: relative;
     }
         .illustration {
             position: static;
@@ -159,4 +160,10 @@ footer {
         margin-top: 0;
         padding: 3rem;
     }
+        .faq-list h1 {
+            text-align: left;
+        }
+        .faq-list ul {
+            padding: 0;
+        }
 }
