@@ -128,31 +128,56 @@ footer {
     main {
         min-height: 100vh;
         align-items: center;
+        overflow: hidden;
     }
 
     .wrapper {
         width: 70vw;
         margin-top: 0;
-        overflow-x: hidden;
+        padding: 0;
 
-        background-image: url('../images/bg-pattern-desktop.svg');
-        background-repeat: no-repeat;
-        background-size: 50%;
-        background-position: -100px 50%;
+        background-image: none;
 
         display: flex;
-        align-items: center;
+        align-items: stretch;
+        box-shadow: 0px 5px 16px 1px hsla(0, 0%, 21%, 0.4);
     }
 
     .illustration-box {
         flex: 0 1 50%;
         max-width: 50%;
         position: relative;
+
+        background-image: url('../images/bg-pattern-desktop.svg');
+        background-repeat: no-repeat;
+        background-size: 800px;
+        background-position: -450px 65%;
     }
-        .illustration {
-            position: static;
-            transform: translateX(-100px);
+        picture {
+            display: block;
+            height: 100%;
             width: 100%;
+            position: relative;
+
+            background-image: url('../images/illustration-woman-online-desktop.svg');
+            background-repeat: no-repeat;
+            background-size: 400px;
+            background-position: -50px;
+        }
+        picture::before {
+            height: inherit;
+            width: inherit;
+
+            content: "";
+            background-image: url('../images/illustration-box-desktop.svg');
+            background-repeat: no-repeat;
+            background-size: 150px;
+            position: absolute;
+            top: 42%;
+            left: -60px;
+        }
+        .illustration {
+            display: none;
         }
     
     .faq-list {
