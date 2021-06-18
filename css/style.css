@@ -103,10 +103,17 @@ main {
         animation: rotate 0.4s ease;
         transform: rotate(180deg);
     }
-    .faq-list details > p {
+    .faq-list ul li details > p {
         max-width: inherit;
+        max-height: 0px;
         margin-bottom: 0;
         color: var(--detail-color);
+        overflow: hidden;
+        transition: max-height 1s ease;
+    }
+    .faq-list ul li details[open] > p {
+        max-height: 200px;
+        transition: max-height 1s ease;
     }
 
 footer {
